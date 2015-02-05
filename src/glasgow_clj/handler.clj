@@ -2,7 +2,8 @@
   (:require [clojure.java.io :as io]
             [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [ring.adapter.jetty :as ring]))
 
 (defroutes app-routes
   (GET "/" [] (slurp (io/resource "homepage.html")))
