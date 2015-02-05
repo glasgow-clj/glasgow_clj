@@ -10,3 +10,6 @@
 
 (def app
   (wrap-defaults app-routes site-defaults))
+
+(defn -main []
+  (ring/run-jetty #'app {:port 8080 :join? false}))
