@@ -7,7 +7,9 @@
                  [ring/ring-defaults "0.1.2"]
                  [enlive "1.1.5"]]
   :plugins [[lein-ring "0.8.13"]]
-  :ring {:handler glasgow-clj.handler/app}
+  :ring {:handler glasgow-clj.handler/app
+         :auto-reload? true
+         :reload-paths ["src" "resources"]}
   :main ^:skip-aot glasgow-clj.handler
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
